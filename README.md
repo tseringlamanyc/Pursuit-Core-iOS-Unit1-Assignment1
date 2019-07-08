@@ -31,9 +31,8 @@ This lab will build on the skills that you've learned after your first week of p
 Use the following line to get user input
 
 ```swift 
-let response = readLine()!
-//The type of response is String
-//We'll get to the exclamation mark next week
+let response = readLine()
+//The type of response is Optional String
 ```
 
 Converting String to a number Type
@@ -79,7 +78,7 @@ default:
 }
 
 if weapon != "" {
-    print("You survived your first ordeal and evan have a \(weapon) to take home")
+    print("You survived your first ordeal and even have a \(weapon) to take home")
 }
 if eggExploded {
     print("Bad luck!  Don't take so many eggs")
