@@ -25,6 +25,9 @@ This lab will build on the skills that you've learned after your first week of p
 <li>Use a for loop in your code</li>
 <li>Use a while loop in your code</li>
  
+ ## Rubric
+ 
+ ![textBasedAdventureRubric.png](./textBasedAdventureRubric.png)
 
 ## Hints:
 
