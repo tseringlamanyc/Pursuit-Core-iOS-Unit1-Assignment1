@@ -11,7 +11,7 @@
 
 ## Lab 
 
-This lab will build on the skills that you've learned after your first week of programming in Swift!  You will build a command line application that plays a text-based adventure game.  Look [here](https://classicreload.com/zork-i.html) and [here](http://www.bbc.co.uk/programmes/articles/1g84m0sXpnNCv84GpN2PLZG/the-hitchhikers-guide-to-the-galaxy-game-30th-anniversary-edition) for a couple examples of the genre.  Be creative with your app.  Submit your assignment by copying and pasting your code into the text box below. Apps will be evaluated by the following criteria:   
+This lab will build on the skills that you've learned after your first week of programming in Swift!  You will build a command line application that plays a text-based adventure game.  Look [here](https://classicreload.com/zork-i.html) and [here](http://www.bbc.co.uk/programmes/articles/1g84m0sXpnNCv84GpN2PLZG/the-hitchhikers-guide-to-the-galaxy-game-30th-anniversary-edition) for a couple examples of the genre.  Be creative with your app. Apps will be evaluated by the following criteria:   
 
 ## App requirements:
 
