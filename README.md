@@ -41,9 +41,8 @@ let response = readLine()
 Converting String to a number Type
 
 ```swift 
-let userEnteredNumAsString = readLine()!
-let userEnteredNumAsInt = Int(userEnteredNumAsString)! 
-//This will crash if you don't have a valid Int
+let userEnteredNumAsString = readLine()
+let userEnteredNumAsInt = Int(userEnteredNumAsString ?? "") ?? -1
 ```
 
 Sample code with conditional logic:
@@ -51,14 +50,14 @@ Sample code with conditional logic:
 ```swift
 print("Your adventure begins! Choose your direction \"Up\" or \"Down\"") //Use \ to escape characters
 
-let UpOrDown = readLine()!
+let UpOrDown = readLine()
 var weapon = "" //Set variables here and you can change and use their values later
 var eggExploded = false
 switch UpOrDown {
 case "Up":
     print("You see a basket of eggs.  How many do you take?")
-    let eggNum = readLine()!
-    let eggNumAsInt = Int(eggNum)!
+    let eggNum = readLine()
+    let eggNumAsInt = Int(eggNum ?? "") ?? -1
     for currentEgg in 1...eggNumAsInt {
         print("You carefully remove egg number \(currentEgg)")
         if currentEgg == 4 {
@@ -76,7 +75,7 @@ case "Down":
     //Instructions for the "Down" option ahead!
 default:
     print("You stand your ground. Choose a weapon")
-    weapon = readLine()!
+    weapon = readLine() ?? ""
     //Fighting conditionals ahead!
 }
 
