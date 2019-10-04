@@ -8,6 +8,8 @@
 
 import Foundation
 
+var loop = false
+
 let diagram = """
 ########  ##     ## ########   ######  ##     ## #### ########
 ##     ## ##     ## ##     ## ##    ## ##     ##  ##     ##
@@ -127,7 +129,7 @@ Thank you for sharing your attributes with us. Hope we can build on your strengt
 sleep(1)
 print()
 print("""
-Please upload your resume in the following box and type continue to sumbit your prusuit application. IF YOU CANT UPLOAD YOUR RESUME, TYPING ""CONTINUE"" WILL DO IT FOR YOU 😎
+Please upload your resume in the following box and type continue to sumbit your prusuit application. IF YOU CANT UPLOAD YOUR RESUME, TYPING ""continue"" WILL DO IT FOR YOU 😎
                                                             ===================================
                                                            |            RESUME BOX             |
                                                            |        UPLOAD HERE PLEASE         |
@@ -150,7 +152,6 @@ print()
 
 repeat {
     if userResponse1 == onlyContinue {
-        
         print("""
 Thank you for submitting your application.
 """)
@@ -193,31 +194,39 @@ print("""
 We are happy to announce that you are being accepted as a fellow in the Prusuit 6.3 cohort. We are happy to add you to our team and look forward to meeting you in person for your orientation. Just a few more questions before we invite you to your new fellow orientation. When would you like to attend your Prusit classes? We offer day and night classes. Please type day or night.
 """)
 
-var userTime = readLine()?.lowercased()
+var userTime = readLine()?.lowercased().trimmingCharacters(in: .whitespaces)
 var correctTime = false
 let dayDecision = (iOS: "iOS", fullstack: "fullstack")
 let nightDecision = (java: "java", python: "python")
 print()
 
+print("userTime is \(userTime)")
+
 repeat {
+    
+    
     if userTime == "day" {
         print("Day huh, thats an excellent choice \(userName)☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️. The day class starts from 10 am and ends around 6 pm, but you stay late and work on your labs or project since tou have access to the building 24/7 ⏰. We offer iOS and fullstack classes during the day time. What would you perfer? iOS or fullstack")
-        correctTime = true }
-    else
-        if userTime == "night" {
-            print("Night huh, I guess you are a night person \(userName)🦉🦉🦉🦉🦉🦉🦉🦉🦉🦉🦉🦉🦉🦉. The night class starts from 6pm and ends at 10 pm but its fine we teach with the same way with passion regardless of the time. But you can come a bit early and work in the building if you wanted. 👍👍👍👍👍👍👍👍👍👍👍. The night classes offers java and python classes. Which one would you perfer?")
-            correctTime = true }
-        else {
-            print("Please pick either day or night.")
-            correctTime = false
-            print()
-            userTime = readLine()
+        correctTime = false
     }
-} while correctTime == false
+    else if userTime == "night" {
+        print("Night huh, I guess you are a night person \(userName)🦉🦉🦉🦉🦉🦉🦉🦉🦉🦉🦉🦉🦉🦉. The night class starts from 6pm and ends at 10 pm but its fine we teach with the same way with passion regardless of the time. But you can come a bit early and work in the building if you wanted. 👍👍👍👍👍👍👍👍👍👍👍. The night classes offers java and python classes. Which one would you perfer?")
+        correctTime = false }
+    else {
+        print("Please pick either day or night.")
+        correctTime = true
+        userTime = readLine()
+        print()
+    }
+} while correctTime
 
 print()
 var userClass = readLine()?.lowercased()
 var userClassAnswer = false
+
+
+// DAY DECISION
+
 
 if userTime == "day" {
     repeat {
@@ -274,18 +283,21 @@ You must really be into web development 🌍🌍🌍🌍🌍🌍. Fullstack is a
     }  while userClassAnswer == false
 }
 
+
+// NIGHT DECISION
+
 if userTime == "night" {
     repeat {
         if userClass == "java" || nightDecision.java == userClass {
             print("""
                 You must really be into web development, java is an awesome language. Your class will start next week and the java instructor is awesome. Thanks for applying to Prusuit again and welcome!!!!!
 
-                                              d88b  .d8b.  db    db  .d8b.
-                                              `8P' d8' `8b 88    88 d8' `8b
-                                               88  88ooo88 Y8    8P 88ooo88
-                                               88  88~~~88 `8b  d8' 88~~~88
-                                           db. 88  88   88  `8bd8'  88   88
-                                           Y8888P  YP   YP    YP    YP   YP
+                                                               d88b  .d8b.  db    db  .d8b.
+                                                               `8P' d8' `8b 88    88 d8' `8b
+                                                                88  88ooo88 Y8    8P 88ooo88
+                                                                88  88~~~88 `8b  d8' 88~~~88
+                                                            db. 88  88   88  `8bd8'  88   88
+                                                            Y8888P  YP   YP    YP    YP   YP
                                                                              
 """)
             userClassAnswer = true }
@@ -327,5 +339,5 @@ You must really be into data analysis, artificial intelligence and scientific co
         }
     }  while userClassAnswer == false
 }
-
+//}
 
